@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://bluejet.github.com/atom.xml" rel="self"/>
+  <link href="http://bluejet.github.com/"/>
+  <updated>2012-04-17T10:43:32+08:00</updated>
+  <id>http://bluejet.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[hello octopress]]></title>
+    <link href="http://bluejet.github.com/blog/2012/04/17/hello-octopress/"/>
+    <updated>2012-04-17T10:43:00+08:00</updated>
+    <id>http://bluejet.github.com/blog/2012/04/17/hello-octopress</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
