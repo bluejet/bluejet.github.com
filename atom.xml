@@ -4,7 +4,7 @@
   <title><![CDATA[Bluejet Blog]]></title>
   <link href="http://bluejet.github.com/atom.xml" rel="self"/>
   <link href="http://bluejet.github.com/"/>
-  <updated>2012-04-18T22:35:21+08:00</updated>
+  <updated>2012-04-18T22:38:14+08:00</updated>
   <id>http://bluejet.github.com/</id>
   <author>
     <name><![CDATA[bluejet]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bluejet.github.com/blog/2012/04/17/hello-octopress/"/>
     <updated>2012-04-17T10:43:00+08:00</updated>
     <id>http://bluejet.github.com/blog/2012/04/17/hello-octopress</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>Say hello to everybody.</p>
 ]]></content>
   </entry>
   
