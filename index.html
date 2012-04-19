@@ -9,8 +9,17 @@
   <meta name="author" content="Bluejet">
 
   
-  <meta name="description" content="Say hello to everybody.
-">
+  <meta name="description" content="Mac Lion 10.7.3 1
+2
+3
+4
+5
+6
+7
+$ git clone https://github.com/erlang/otp.git
+$ cd otp
+$ ./otp_build autoconf
+$ CFLAGS=-O0 ./configure --enable-hipe -- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -72,6 +81,60 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/04/19/install-erlang-from-git/">Install Erlang From Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-19T17:35:00+08:00" pubdate data-updated="true">Apr 19<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/04/19/install-erlang-from-git/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Mac Lion 10.7.3</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git clone https://github.com/erlang/otp.git
+</span><span class='line'>$ cd otp
+</span><span class='line'>$ ./otp_build autoconf
+</span><span class='line'>$ CFLAGS=-O0 ./configure --enable-hipe --enable-smp-support --enable-threads \
+</span><span class='line'>       --enable-kernel-poll --enable-darwin-64bit
+</span><span class='line'>$ make
+</span><span class='line'>$ sudo make install</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/04/17/hello-octopress/">Hello Octopress</a></h1>
     
     
@@ -118,6 +181,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/04/19/install-erlang-from-git/">Install Erlang from git</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/04/17/hello-octopress/">hello octopress</a>
       </li>
     
@@ -128,6 +195,7 @@
 <h1>Categories</h1>
 <ul>
   <li><a href='/blog/categories/doc'>Doc (1)</a></li>
+  <li><a href='/blog/categories/erlang'>Erlang (1)</a></li>
 </ul>
 </section>
 
