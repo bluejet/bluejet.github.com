@@ -9,17 +9,10 @@
   <meta name="author" content="Bluejet">
 
   
-  <meta name="description" content="Mac Lion 10.7.3 1
+  <meta name="description" content="上传文件时，错误提示&#8221;413 Request Entity Too Large&#8221;， 可以修改apache配置文件，在httpd.conf中，找到以下语句: 1
 2
 3
-4
-5
-6
-7
-$ git clone https://github.com/erlang/otp.git
-$ cd otp
-$ ./otp_build autoconf
-$ CFLAGS=-O0 ./configure --enable-hipe -- &hellip;">
+&lt;Directory /&gt; LimitRequestBody 1024 # bytes, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +68,58 @@ $ CFLAGS=-O0 ./configure --enable-hipe -- &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/28/413-request-entity-too-large/">413 Request Entity Too Large</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-28T14:21:00+08:00" pubdate data-updated="true">May 28<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/05/28/413-request-entity-too-large/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上传文件时，错误提示&#8221;413 Request Entity Too Large&#8221;， 可以修改apache配置文件，在httpd.conf中，找到以下语句:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;Directory /&gt;
+</span><span class='line'>  LimitRequestBody 1024  # bytes, default value is 0, no limit
+</span><span class='line'>&lt;/Directory&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置好了还是不行的话，需要检查是否还有其它地方，比如Nginx，修改nginx.conf文件，找到http段，修改</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>client_max_body_size 10m;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -179,6 +224,10 @@ $ CFLAGS=-O0 ./configure --enable-hipe -- &hellip;">
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/05/28/413-request-entity-too-large/">413 Request Entity Too Large</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/04/19/install-erlang-from-git/">Install Erlang from git</a>

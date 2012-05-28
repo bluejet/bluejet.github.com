@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - Bluejet Blog</title>
+  <title>413 Request Entity Too Large - Bluejet Blog</title>
   <meta name="author" content="Bluejet">
 
   
-  <meta name="description" content="About Apr 17th, 2012 一只高尚的攻城狮，一只脱离了低级趣味的程序猿。 Apr 17th, 2012 Tweet Comments Please enable JavaScript to view the comments powered by Disqus. Recent &hellip;">
+  <meta name="description" content="上传文件时，错误提示&#8221;413 Request Entity Too Large&#8221;， 可以修改apache配置文件，在httpd.conf中，找到以下语句: 1
+2
+3
+&lt;Directory /&gt; LimitRequestBody 1024 # bytes, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bluejet.github.com/about">
+  <link rel="canonical" href="http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -64,32 +67,15 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-17T17:12:00+08:00" pubdate data-updated="true">Apr 17<span>th</span>, 2012</time></p>
-  </header>
-  
-  <p><strong>一只高尚的攻城狮，一只脱离了低级趣味的程序猿。</strong></p>
-
-  
-    <footer>
+    
+      <h1 class="entry-title">413 Request Entity Too Large</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -101,21 +87,74 @@
   
 
 
-<time datetime="2012-04-17T17:12:00+08:00" pubdate data-updated="true">Apr 17<span>th</span>, 2012</time>
+<time datetime="2012-05-28T14:21:00+08:00" pubdate data-updated="true">May 28<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>上传文件时，错误提示&#8221;413 Request Entity Too Large&#8221;， 可以修改apache配置文件，在httpd.conf中，找到以下语句:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;Directory /&gt;
+</span><span class='line'>  LimitRequestBody 1024  # bytes, default value is 0, no limit
+</span><span class='line'>&lt;/Directory&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置好了还是不行的话，需要检查是否还有其它地方，比如Nginx，修改nginx.conf文件，找到http段，修改</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>client_max_body_size 10m;</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bluejet.github.com/about/index.html" data-via="" data-counturl="http://bluejet.github.com/about/index.html" >Tweet</a>
+
+<span class="byline author vcard">Posted by <span class="fn">Bluejet</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-28T14:21:00+08:00" pubdate data-updated="true">May 28<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/" data-via="" data-counturl="http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/" >Tweet</a>
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2012/04/19/install-erlang-from-git/" title="Previous Post: Install Erlang from git">&laquo; Install Erlang from git</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
   <section>
@@ -196,8 +235,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://bluejet.github.com/about/index.html';
-        var disqus_url = 'http://bluejet.github.com/about/index.html';
+        var disqus_identifier = 'http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/';
+        var disqus_url = 'http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/';
         var disqus_script = 'embed.js';
       
     (function () {

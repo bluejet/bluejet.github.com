@@ -4,7 +4,7 @@
   <title><![CDATA[Bluejet Blog]]></title>
   <link href="http://bluejet.github.com/atom.xml" rel="self"/>
   <link href="http://bluejet.github.com/"/>
-  <updated>2012-05-23T12:25:02+08:00</updated>
+  <updated>2012-05-28T14:41:32+08:00</updated>
   <id>http://bluejet.github.com/</id>
   <author>
     <name><![CDATA[Bluejet]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[413 Request Entity Too Large]]></title>
+    <link href="http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/"/>
+    <updated>2012-05-28T14:21:00+08:00</updated>
+    <id>http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large</id>
+    <content type="html"><![CDATA[<p>上传文件时，错误提示&#8221;413 Request Entity Too Large&#8221;， 可以修改apache配置文件，在httpd.conf中，找到以下语句:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;Directory /&gt;
+</span><span class='line'>  LimitRequestBody 1024  # bytes, default value is 0, no limit
+</span><span class='line'>&lt;/Directory&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>设置好了还是不行的话，需要检查是否还有其它地方，比如Nginx，修改nginx.conf文件，找到http段，修改</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>client_max_body_size 10m;</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Install Erlang from git]]></title>
