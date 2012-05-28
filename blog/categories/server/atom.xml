@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Server | Bluejet Blog]]></title>
+  <link href="http://bluejet.github.com/blog/categories/server/atom.xml" rel="self"/>
+  <link href="http://bluejet.github.com/"/>
+  <updated>2012-05-28T14:44:46+08:00</updated>
+  <id>http://bluejet.github.com/</id>
+  <author>
+    <name><![CDATA[Bluejet]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[413 Request Entity Too Large]]></title>
+    <link href="http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large/"/>
+    <updated>2012-05-28T14:21:00+08:00</updated>
+    <id>http://bluejet.github.com/blog/2012/05/28/413-request-entity-too-large</id>
+    <content type="html"><![CDATA[<p>上传文件时，错误提示"413 Request Entity Too Large"， 可以修改apache配置文件，在httpd.conf中，找到以下语句:</p>
+
+<p><code>
+&lt;Directory /&gt;
+  LimitRequestBody 1024  # bytes, default value is 0, no limit
+&lt;/Directory&gt;
+</code></p>
+
+<p>设置好了还是不行的话，需要检查是否还有其它地方，比如Nginx，修改nginx.conf文件，找到http段，修改</p>
+
+<p><code>
+client_max_body_size 10m;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
